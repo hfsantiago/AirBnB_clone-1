@@ -120,16 +120,16 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif list_split[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
-        else:
-            new_instance = eval(list_split[0] + '()')
+        else:            
+            new_instance = eval(list_split[0] + '()')            
 
             for i in range(1, len(list_split)):
-                key_val_list = list_split[i].split('=')
+                key_val_list = list_split[i].split('=')                
                 key_val_list[1] = key_val_list[1].replace('_', ' ')
                 setattr(new_instance, key_val_list[0], key_val_list[1])
-
+               
             new_instance.save()
-            print(new_instance.id)
+            print(new_instance.id)        
 
     def help_create(self):
         """ Help information for the create method """
