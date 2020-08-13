@@ -1,4 +1,5 @@
-s module defines a class to manage file storage for hbnb clone"""
+#!/usr/bin/python3
+"""this module defines a class to manage file storage for hbnb clone"""
 import json
 from models.base_model import BaseModel
 from models.user import User
