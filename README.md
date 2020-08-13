@@ -99,7 +99,8 @@ Advanced syntax is implemented for the following commands:
 
 <br>
 <br>
-## 
+
+## Comments
 
 This web app has been the capstone project of my full-stack education at
 Holberton School and I want to show it off as a demonstration of all the
