@@ -2,7 +2,7 @@
 """ Console Module """
 import cmd
 import sys
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from models.__init__ import storage
 from models.user import User
 from models.place import Place
@@ -19,9 +19,9 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
 
     classes = [
-               'BaseModel': BaseModel, 'User': User, 'Place': Place,
-               'State': State, 'City': City, 'Amenity': Amenity,
-               'Review': Review
+               'BaseModel', 'User', 'Place',
+               'State', 'City', 'Amenity',
+               'Review'
               ]
     dot_cmds = ['all', 'count', 'show', 'destroy', 'update']
     types = {
@@ -37,7 +37,6 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
-
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
         (Brackets denote optional fields in usage example.)
         """
@@ -113,24 +112,24 @@ class HBNBCommand(cmd.Cmd):
         """ Overrides the emptyline method of CMD """
         pass
 
-    def do_create(self, args):
-    """Usage: create <class> <key 1>=<value 2> <key 2>=<value 2> ...
-        Create a new class instance with given keys/values and print its id."""
-        my_list = args.split()
-        if not my_list:
+    def do_create(self, arg):
+        """Creates a new instance of Basemodel,
+        saves it and prints the id"""
+        list_split = arg.split()
+        if len(list_split) == 0:
             print("** class name missing **")
-        elif my_list[0] not in HBNBCommand.classes:
+        elif list_split[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
         else:
-            my_object = eval(my_list[0] + '()')
+            new_instance = eval(list_split[0] + '()')
 
-            for i in range(1, len(my_list)):
-                res = my_list[i].split('=')
-                res[1] = res[1].replace('_', ' ')
-                setattr(my_object, res[0], res[1])
+            for i in range(1, len(list_split)):
+                key_val_list = list_split[i].split('=')
+                key_val_list[1] = key_val_list[1].replace('_', ' ')
+                setattr(new_instance, key_val_list[0], key_val_list[1])
 
-            my_object.save()
-            print(my_object.id)
+            new_instance.save()
+            print(new_instance.id)
 
     def help_create(self):
         """ Help information for the create method """
@@ -325,6 +324,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
