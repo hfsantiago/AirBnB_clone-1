@@ -73,7 +73,7 @@ the application (achieved by calls on the `storage` object defined above).
 
     * update - Updates existing attributes an object based on class name and UUID
 
-    
+    * quit - Exits the program (EOF will as well)
 
 
 ##### Alternative Syntax
