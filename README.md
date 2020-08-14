@@ -1,7 +1,6 @@
 <h1 align="center">HolbertonBnB</h1>
 <h2 align="center">An AirBnB_clone_v2.</h2>
 
-
 <p align="center"><img src= "https://media.itsnicethat.com/original_images/563b97a87fa44cff9d001760.gif" width="600" height="400"/></p>
 
 ## Description :house:
@@ -23,8 +22,6 @@ deploy in the coming month:
   <img src="https://github.com/hfsantiago/AirBnB_clone_v2/blob/master/assets/hbnb_stack.png"
 	    alt="HolbertonBnB stack">
 </p>
-
-
 
 ---
 
@@ -430,7 +427,6 @@ Alternatively, you can specify a single test file to run at a time:
 ```
 $ python3 unittest -m tests/test_console.py
 ```
-
 
 ## Authors :black_nib:
 
