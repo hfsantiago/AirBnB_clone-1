@@ -41,38 +41,23 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, line):
-        """Usage: create <class> <key 1>=<value 2> <key 2>=<value 2> ...
-        Create a new class instance with given keys/values and print its id.
-        """
-        try:
-            if not line:
-                raise SyntaxError()
-            my_list = line.split(" ")
+    """Creates a new instance of Basemodel,
+        saves it and prints the id"""
+        list_split = arg.split()
+        if len(list_split) == 0:
+            print(" class name missing ")
+        elif list_split[0] not in HBNBCommand.classes:
+            print(" class doesn't exist ")
+        else:
+            new_instance = eval(list_split[0] + '()')
 
-            kwargs = {}
-            for i in range(1, len(my_list)):
-                key, value = tuple(my_list[i].split("="))
-                if value[0] == '"':
-                    value = value.strip('"').replace("_", " ")
-                else:
-                    try:
-                        value = eval(value)
-                    except (SyntaxError, NameError):
-                        continue
-                kwargs[key] = value
+            for i in range(1, len(list_split)):
+                key_val_list = list_split[i].split('=')
+                key_val_list[1] = key_vallist[1].replace('', ' ')
+                setattr(new_instance, key_val_list[0], key_val_list[1])
 
-            if kwargs == {}:
-                obj = eval(my_list[0])()
-            else:
-                obj = eval(my_list[0])(**kwargs)
-                storage.new(obj)
-            print(obj.id)
-            obj.save()
-
-        except SyntaxError:
-            print("** class name missing **")
-        except NameError:
-            print("** class doesn't exist **")
+            new_instance.save()
+            print(new_instance.id)    
 
     def do_show(self, line):
         """Prints the string representation of an instance
