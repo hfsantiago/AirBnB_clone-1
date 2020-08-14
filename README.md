@@ -42,7 +42,7 @@ deploy in the coming month:
 | 10. Console 1.0 | [console.py](https://github.com/hfsantiago/AirBnB_clone_v2/blob/master/console.py) [/models/engine/file_storage.py](https://github.com/hfsantiago/AirBnB_clone_v2/blob/master/models/engine/file_storage.py) | Update the console and file storage system to work dynamically with all  classes update file storage |
 <br>
 <br>
-<center> <h2>General Use</h2> </center>
+<center> <h2>Geñeral Use</h2> </center>
 
 1. First clone this repository.
 
