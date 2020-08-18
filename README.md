@@ -1,10 +1,7 @@
 <h1 align="center">HolbertonBnB</h1>
-<p align="center">An AirBnB_clone_v2.</p>
+<h2 align="center">An AirBnB_clone_v2.</h2>
 
-<p align="center">
-  <img src="https://github.com/hfsantiago/AirBnB_clone_v2/blob/master/assets/hbnb_logo.png"
-	    alt="HolbertonBnB logo">
-</p>
+<p align="center"><img src= "https://media.itsnicethat.com/original_images/563b97a87fa44cff9d001760.gif" width="600" height="400"/></p>
 
 ## Description :house:
 
@@ -26,8 +23,6 @@ deploy in the coming month:
 	    alt="HolbertonBnB stack">
 </p>
 
-
-
 ---
 
 <center><h3>Repository Contents by Project Task</h3> </center>
@@ -47,7 +42,7 @@ deploy in the coming month:
 | 10. Console 1.0 | [console.py](https://github.com/hfsantiago/AirBnB_clone_v2/blob/master/console.py) [/models/engine/file_storage.py](https://github.com/hfsantiago/AirBnB_clone_v2/blob/master/models/engine/file_storage.py) | Update the console and file storage system to work dynamically with all  classes update file storage |
 <br>
 <br>
-<center> <h2>General Use</h2> </center>
+<center> <h2>Geñeral Use</h2> </center>
 
 1. First clone this repository.
 
@@ -433,11 +428,10 @@ Alternatively, you can specify a single test file to run at a time:
 $ python3 unittest -m tests/test_console.py
 ```
 
-
 ## Authors :black_nib:
 
 [Esteban De La Hoz](https://www.linkedin.com/in/esteban-de-la-hoz-romero-b6270017b/) | [Twitter](https://twitter.com/Esteban18911) | [GitHub](https://github.com/Esteban18911)
 
 
-[Hugo Santiago](https://www.linkedin.com/in/esteban-de-la-hoz-romero-b6270017b/) | [Twitter](https://github.com/hfsantiago) | [GitHub](https://github.com/hfsantiago)
+[Hugo Santiago](https://www.linkedin.com/in/hugo-santiago-330b30145/) | [Twitter](https://twitter.com/hsant1ago) | [GitHub](https://github.com/hfsantiago)
 
