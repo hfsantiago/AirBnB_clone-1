@@ -1,14 +1,27 @@
-<!DOCTYPE html>
-<HTML lang="en">
-    <HEAD>
-        <TITLE>HBNB</TITLE>
-    </HEAD>
-    <BODY>
-        <H1>States</H1>
-        <UL>
-        {% for state in states.values()|sort(attribute="name") %}
-            <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
-        {% endfor %}
-        </UL>
-    </BODY>
-</HTML>
+#!/usr/bin/python3
+"""
+starts a Flask web app.
+"""
+from models import storage
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.teardown_appcontext
+def teardown(exception):
+    """Removes current SQLAlchemy session."""
+    storage.close()
+
+
+@app.route("/states_list", strict_slashes=False)
+def route1():
+    """Display HTML page with a list of
+    all objects inside a DBstorage."""
+    url = '7-states_list.html'
+    dict_states = storage.all("State")
+    return render_template(url, states=dictionary)
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port="5000")
